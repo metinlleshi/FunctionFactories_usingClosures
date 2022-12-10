@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body>
+    <script>
+        function makeGreeting(language) {
+            return function(name,surname) {
+                if(language== "albanian"){
+                    console.log("Pershendetje " +name + " "+ surname);
+                }
+                else if (language =="english"){
+                    console.log("Hello " + name + " " + surname);
+                }
+                else if (language=="italian") {
+                    console.log("Ciao " + name + " "+surname)
+                }
+                else {
+                    console.log(name + " "+ surname);
+                }
+            }
+        }
+
+        var albanianGreeting = makeGreeting("albanian");
+        var englishGreeting = makeGreeting("english");
+        var italianGreeting = makeGreeting("italian");
+        var plainGreeting=makeGreeting();
+
+        albanianGreeting("Metin","Lleshi");
+        englishGreeting("Metin","Lleshi");
+        italianGreeting("Metin","Lleshi");
+        plainGreeting("Metin","Lleshi");
+    </script>
+</body>
+</html>
